@@ -1,0 +1,16 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "name": "rocky balboa",
+      "author": "rocky",
+      "cost": 420
+    },
+    {
+      "id": 2,
+      "name": "creed 2",
+      "author": "rocky",
+      "cost": 120
+    }
+  ]
+}
