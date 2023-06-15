@@ -9,3 +9,13 @@ export const booksFetchAPISuccess = createAction(
   '[Books API] Fetch API Success',
   props<{ allBooks: Books[] }>()
 );
+
+export const invokeSaveNewBookAPI = createAction(
+  '[Books API] Inovke save new book api',
+  props<{ newBook: Books }>()
+);
+
+export const saveNewBookAPISucess = createAction(
+  '[Books API] save new book api success',
+  props<{ newBook: Books }>()
+);
