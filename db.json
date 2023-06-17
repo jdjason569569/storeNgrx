@@ -4,19 +4,13 @@
       "id": 1,
       "name": "rocky balboa",
       "author": "rocky",
-      "cost": 420
+      "cost": 420123
     },
     {
       "id": 2,
       "name": "creed 2",
       "author": "rocky",
       "cost": 120
-    },
-    {
-      "id": 3,
-      "author": "qq",
-      "name": "qq",
-      "cost": 12
     }
   ]
 }
