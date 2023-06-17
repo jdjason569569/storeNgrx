@@ -18,6 +18,9 @@
       </div>
       <div class="card-body">
         <a [routerLink]="['/edit', book.id]" class="btn btn-dark">Edit Book</a>
+        <button class="btn btn-dark" (click)="deleteBook(book.id)">
+          Delete
+        </button>
       </div>
     </div>
   </div>

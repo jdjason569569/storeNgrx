@@ -5,7 +5,9 @@ import { EMPTY, map, mergeMap, switchMap, withLatestFrom } from 'rxjs';
 import { BooksService } from '../books.service';
 import {
   booksFetchAPISuccess,
+  deleteBookAPISuccess,
   invokeBooksAPI,
+  invokeDeleteBookAPI,
   invokeSaveNewBookAPI,
   invokeUpdateBookAPI,
   saveNewBookAPISucess,
@@ -76,6 +78,27 @@ export class BooksEffect {
               })
             );
             return updateBookAPISucess({ updateBook: data });
+          })
+        );
+      })
+    );
+  });
+
+  deleteBooksAPI$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(invokeDeleteBookAPI),
+      switchMap((actions) => {
+        this.appStore.dispatch(
+          setAPIStatus({ apiStatus: { apiResponseMessage: '', apiStatus: '' } })
+        );
+        return this.booksService.delete(actions.id).pipe(
+          map(() => {
+            this.appStore.dispatch(
+              setAPIStatus({
+                apiStatus: { apiResponseMessage: '', apiStatus: 'success' },
+              })
+            );
+            return deleteBookAPISuccess({ id: actions.id });
           })
         );
       })
